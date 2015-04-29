@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Bootstrap, a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.">
+	<meta name="keywords" content="Greg Haranczyk, Grzegorz Haranczyk, Python, Flask, Flask app">
+	<meta name="author" content="Grzegorz (Greg) Haranczyk">
+	
+	<title>gharanczyk Flask</title>
+	
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  </head>
+  
+  
+  <body style="background: url({{ url_for('static', filename='images/backg.jpg') }}); background-repeat: repeat-x;">
+  <header>
+  <div class="container">
+	  <nav class="navbar navbar-default">
+	  
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="/">
+		  <img style="max-width:120px; margin-top: -7px;" src="{{ url_for('static', filename='images/logo.png') }}" />
+		  </a>
+		</div>
+
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse navHeaderCollapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+			<li class="active"><a href="/dashboard/">Dashboard<span class="sr-only">(current)</span></a></li>
+			  </ul>
+			</li>
+		  </ul>
+		  
+		      <ul class="nav navbar-nav navbar-right">
+		  
+		  <div style="margin-right: 10px; margin-left: 15px; margin-top: 5px; margin-bottom: 5px;"  class="container-fluid">
+			<h5>
+				
+				{% if session.logged_in  %}
+				<a href="/logout/"><span class="glyphicon glyphicon-log-in"></span> Logout&nbsp;&nbsp;&nbsp;</a>
+				{% else %}			
+				<a href="/login/"><span class="glyphicon glyphicon-log-in"></span> Login&nbsp;&nbsp;&nbsp;</a>
+				<a href="/signup/"><span class="glyphicon glyphicon-pencil"></span> Sign up</a>
+				{% endif %}
+			</h5>
+		
+		   </div>
+								  
+								  </ul>
+		  
+		 
+		</div><!-- /.navbar-collapse -->
+	  </div>
+	</nav>
+	<div class="container">
+	    <div class="jumbotron">
+      <div class="container" style="text-align:center">
+	  <br>
+        <h1>Welcome to my Flask site!</h1>
+        <p>This is a sample website made using Python Flask created by Greg Haranczyk.<br>
+		<p><a class="btn btn-primary btn-lg" href="https://github.com/haracode/FlaskApp" role="button" align="center">Click to see the Source Code &raquo;</a></p>
+		<ol style="font-size:20px"><strong>This website has three key functions:</strong>  
+      </div>
+    </div>
+	</div>
+  
+  </header>
+  
+	   <div class="container">
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img data-holder-rendered="true" src="{{ url_for('static', filename='images/cms.png') }}" style="height: 60%; width: 60%; display: block;" data-src="holder.js/100%x200" alt="100%x200">
+          <div class="caption">
+            <h3 id="thumbnail-label" style="text-align:center;" >Internal CMS Feature<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h3>
+            <p>By using Flask’s variables, an internal content management system was created on this website. This CMS allows for dynamic editing of webpages.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+           <img data-holder-rendered="true" src="{{ url_for('static', filename='images/singup.png') }}" style="height: 60%; width: 60%; display: block;" data-src="holder.js/100%x200" alt="100%x200">
+          <div class="caption">
+            <h3 id="thumbnail-label" style="text-align:center;" >Sign Up Feature<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h3>
+            <p>This website features a user registration system where a user can sign up by using their email, username, and password. </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+           <img data-holder-rendered="true" src="{{ url_for('static', filename='images/login.png') }}" style="height: 60%; width: 60%; display: block;" data-src="holder.js/100%x200" alt="100%x200">
+          <div class="caption">
+            <h3 id="thumbnail-label" style="text-align:center;" >User Login Feature<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h3>
+            <p>After a user creates an account, they can log in using their credentials. This Flask website is synced to a MySQL database.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+		
+
+	  
+  
+  <!-- js inclues -->
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+	
+  </body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</html>
